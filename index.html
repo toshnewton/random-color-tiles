@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+        .square {
+            background-color: #737373;
+            float: left;
+            position: relative;
+            width: 10%;
+            padding-bottom: 10%;
+            margin: 1%;
+            justify-content:center;
+        }
+
+        p {
+            margin: 0 0 0 0;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            font-family: 'Open Sans', sans-serif;
+            line-height:22px;
+            text-align:center;
+            display:block;
+        }
+
+        p:hover {
+            color:white;
+            line-height:22px;
+            font-size:120%;
+        }
+    </style>
+</head>
+<body>
+    <div class="square" id="first"><p>R E S E T<br /> G R I D</p></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+
+    <script type="text/javascript">
+
+        let squares = document.querySelectorAll('div');
+
+        /*Mouseover change to random color*/
+        squares.forEach(item => item.addEventListener('mouseover', (e) => {
+            changeColor(item);
+        }))
+
+        const changeColor = (item) => {
+            item.style.background = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        }
+
+        /* Reset current square */
+        squares.forEach(item => item.addEventListener('click', (e) => {
+            resetSquare(item);
+        }))
+
+        const resetSquare = (item) => {
+            item.style.background = "#737373";
+        }
+
+        /* Reset all squares */
+        document.getElementById('first').addEventListener('click', () => {
+            resetAllSquares();
+        })
+
+        const resetAllSquares = () => {
+            squares.forEach(item => item.style.background = "#737373");
+        }
+
+    </script>
+</body>
+</html>
